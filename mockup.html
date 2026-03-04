@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>Aicraft — Video Mockup 1920×1080</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #06080d;
+    color: #e6edf3;
+    position: relative;
+  }
+
+  /* ── Background effects ──────────────────────────── */
+  .bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 70%);
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.35;
+  }
+  .orb1 { width: 700px; height: 700px; background: #3b82f6; top: -200px; left: -100px; }
+  .orb2 { width: 600px; height: 600px; background: #a855f7; top: 100px; right: -150px; opacity: 0.25; }
+  .orb3 { width: 450px; height: 450px; background: #06b6d4; bottom: -100px; left: 35%; opacity: 0.2; }
+  .orb4 { width: 300px; height: 300px; background: #22c55e; bottom: 50px; right: 200px; opacity: 0.12; }
+
+  .noise {
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  /* ── Layout ──────────────────────────────────────── */
+  .container {
+    position: relative; z-index: 2;
+    width: 100%; height: 100%;
+    display: flex;
+    padding: 0 120px;
+  }
+
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    padding-right: 80px;
+  }
+
+  .right {
+    flex: 0 0 680px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Badge ───────────────────────────────────────── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.25);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #60a5fa;
+    width: fit-content;
+  }
+  .badge-sep {
+    color: rgba(59,130,246,0.3);
+    font-weight: 400;
+  }
+  .badge-dot {
+    width: 6px; height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22c55e;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ── Title ───────────────────────────────────────── */
+  h1 {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -2px;
+  }
+  .grad {
+    background: linear-gradient(135deg, #3b82f6 0%, #a855f7 40%, #06b6d4 70%, #22c55e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ── Subtitle ────────────────────────────────────── */
+  .subtitle {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #8b949e;
+    max-width: 560px;
+  }
+  .subtitle code {
+    background: rgba(59,130,246,0.12);
+    color: #7dd3fc;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+  }
+
+  /* ── Meta tags ───────────────────────────────────── */
+  .meta {
+    display: flex;
+    gap: 20px;
+    margin-top: 4px;
+  }
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #8b949e;
+  }
+  .meta-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+  }
+
+  /* ── Stats row ───────────────────────────────────── */
+  .stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 12px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(139,148,158,0.12);
+  }
+  .stat {
+    text-align: left;
+  }
+  .stat-num {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #e6edf3, #8b949e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stat-label {
+    display: block;
+    font-size: 12px;
+    color: #636c76;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* ── Terminal window ─────────────────────────────── */
+  .terminal {
+    width: 620px;
+    background: #0d1117;
+    border: 1px solid rgba(139,148,158,0.15);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(59,130,246,0.08),
+      0 25px 80px rgba(0,0,0,0.5),
+      0 0 120px rgba(59,130,246,0.06);
+    transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+  }
+
+  .term-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 18px;
+    background: #161b22;
+    border-bottom: 1px solid rgba(139,148,158,0.1);
+  }
+  .term-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+  }
+  .term-title {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: #484f58;
+    font-weight: 500;
+    margin-right: 44px;
+  }
+
+  .term-body {
+    padding: 24px 24px 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13.5px;
+    line-height: 2;
+    color: #c9d1d9;
+  }
+  .term-line {
+    white-space: pre;
+  }
+  .prompt { color: #22c55e; font-weight: 600; }
+  .ok { color: #22c55e; font-weight: 600; }
+  .ms { color: #f59e0b; font-weight: 600; }
+  .cursor {
+    display: inline-block;
+    width: 8px; height: 18px;
+    background: #58a6ff;
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    border-radius: 1px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* ── Feature pills ───────────────────────────────── */
+  .pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .pill {
+    background: rgba(139,148,158,0.08);
+    border: 1px solid rgba(139,148,158,0.12);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #8b949e;
+    letter-spacing: 0.5px;
+  }
+  .pill-blue  { background: rgba(59,130,246,0.1);  border-color: rgba(59,130,246,0.2);  color: #60a5fa; }
+  .pill-purple{ background: rgba(168,85,247,0.1);  border-color: rgba(168,85,247,0.2);  color: #c084fc; }
+  .pill-cyan  { background: rgba(6,182,212,0.1);   border-color: rgba(6,182,212,0.2);   color: #22d3ee; }
+  .pill-green { background: rgba(34,197,94,0.1);   border-color: rgba(34,197,94,0.2);   color: #4ade80; }
+  .pill-amber { background: rgba(245,158,11,0.1);  border-color: rgba(245,158,11,0.2);  color: #fbbf24; }
+  .pill-red   { background: rgba(239,68,68,0.1);   border-color: rgba(239,68,68,0.2);   color: #f87171; }
+
+  /* ── URL bar at bottom ───────────────────────────── */
+  .url-bar {
+    position: absolute;
+    bottom: 30px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(22,27,34,0.8);
+    border: 1px solid rgba(139,148,158,0.12);
+    backdrop-filter: blur(20px);
+    border-radius: 100px;
+    padding: 10px 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #636c76;
+  }
+  .url-bar svg { flex-shrink: 0; }
+  .url-highlight { color: #e6edf3; }
+
+  /* ── Logo area ───────────────────────────────────── */
+  .logo-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .logo-icon {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, #3b82f6, #a855f7);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 900;
+    color: white;
+    box-shadow: 0 4px 24px rgba(59,130,246,0.3);
+  }
+  .logo-text {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  /* ── Decorative line ─────────────────────────────── */
+  .deco-line {
+    position: absolute;
+    top: 0; left: 120px;
+    width: 1px; height: 200px;
+    background: linear-gradient(to bottom, rgba(59,130,246,0.3), transparent);
+    z-index: 1;
+  }
+  .deco-line2 {
+    position: absolute;
+    bottom: 0; right: 380px;
+    width: 1px; height: 160px;
+    background: linear-gradient(to top, rgba(168,85,247,0.2), transparent);
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="orb orb4"></div>
+  <div class="bg-grid"></div>
+  <div class="noise"></div>
+  <div class="deco-line"></div>
+  <div class="deco-line2"></div>
+
+  <div class="container">
+    <!-- LEFT SIDE -->
+    <div class="left">
+      <div class="logo-group">
+        <div class="logo-icon">A</div>
+        <span class="logo-text">Aicraft</span>
+      </div>
+
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>Pure C</span>
+        <span class="badge-sep">|</span>
+        <span>Zero Dependencies</span>
+        <span class="badge-sep">|</span>
+        <span>MIT License</span>
+      </div>
+
+      <h1>
+        Machine learning,<br>
+        <span class="grad">uncompromised.</span>
+      </h1>
+
+      <p class="subtitle">
+        A complete deep-learning framework written entirely in pure&nbsp;C.<br>
+        SIMD-optimised, Vulkan-accelerated, header-only.<br>
+        From training to edge inference in a single <code>#include</code>.
+      </p>
+
+      <div class="pills">
+        <span class="pill pill-blue">SIMD Vectorised</span>
+        <span class="pill pill-purple">Vulkan Compute</span>
+        <span class="pill pill-cyan">Autograd Engine</span>
+        <span class="pill pill-amber">INT8 Quantisation</span>
+        <span class="pill pill-green">Arena Allocator</span>
+        <span class="pill pill-red">Full Training</span>
+      </div>
+
+      <div class="meta">
+        <span class="meta-item"><span class="meta-dot" style="background:#555961"></span>C11</span>
+        <span class="meta-item"><span class="meta-dot" style="background:#22c55e"></span>MIT License</span>
+        <span class="meta-item"><span class="meta-dot" style="background:#3b82f6"></span>v1.0</span>
+        <span class="meta-item"><span class="meta-dot" style="background:#a855f7"></span>Header-only</span>
+        <span class="meta-item"><span class="meta-dot" style="background:#f59e0b"></span>Cross-platform</span>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span class="stat-num">5,000+</span><span class="stat-label">Lines of C</span></div>
+        <div class="stat"><span class="stat-num">16</span><span class="stat-label">Header files</span></div>
+        <div class="stat"><span class="stat-num">14</span><span class="stat-label">GLSL Shaders</span></div>
+        <div class="stat"><span class="stat-num">22</span><span class="stat-label">Autograd ops</span></div>
+        <div class="stat"><span class="stat-num">0</span><span class="stat-label">Dependencies</span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE — Terminal -->
+    <div class="right">
+      <div class="terminal">
+        <div class="term-bar">
+          <span class="term-dot" style="background:#ff5f57"></span>
+          <span class="term-dot" style="background:#febc2e"></span>
+          <span class="term-dot" style="background:#28c840"></span>
+          <span class="term-title">terminal</span>
+        </div>
+        <div class="term-body">
+          <div class="term-line"><span class="prompt">$ </span>git clone https://github.com/</div>
+          <div class="term-line">  TobiasTesauri/Aicraft.git</div>
+          <div class="term-line"><span class="prompt">$ </span>cd Aicraft</div>
+          <div class="term-line"><span class="prompt">$ </span>gcc -O3 demo.c -I./include -o demo</div>
+          <div class="term-line"><span class="prompt">$ </span>./demo</div>
+          <div class="term-line">[ac] init .............. <span class="ok">ok</span></div>
+          <div class="term-line">[ac] dense 784→128 ..... <span class="ok">ok</span></div>
+          <div class="term-line">[ac] dense 128→10 ...... <span class="ok">ok</span></div>
+          <div class="term-line">[ac] forward ........... <span class="ms">0.42 ms</span></div>
+          <div class="term-line">[ac] backward .......... <span class="ms">0.87 ms</span></div>
+          <div class="term-line">[ac] loss: 0.0234 ...... <span class="ok">ok</span></div>
+          <div class="term-line">[ac] cleanup ........... <span class="ok">ok</span></div>
+          <div class="term-line"><span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- URL bar -->
+  <div class="url-bar">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20" stroke="currentColor" stroke-width="1.5"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" stroke="currentColor" stroke-width="1.5"/></svg>
+    <span>miaototi.github.io/<span class="url-highlight">Aicraft</span></span>
+  </div>
+
+</body>
+</html>

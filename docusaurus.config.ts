@@ -27,7 +27,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/miaototi/Aicraft/tree/main/website/',
+          editUrl: 'https://github.com/TobiasTesauri/Aicraft/tree/main/',
         },
         blog: false,
         theme: {
@@ -39,6 +39,13 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/aicraft-social-card.png',
+    announcementBar: {
+      id: 'star',
+      content: 'If you like Aicraft, give it a <a target="_blank" rel="noopener noreferrer" href="https://github.com/TobiasTesauri/Aicraft">star on GitHub</a>!',
+      backgroundColor: '#0d1117',
+      textColor: '#c9d1d9',
+      isCloseable: true,
+    },
     navbar: {
       title: 'Aicraft',
       logo: {
@@ -68,7 +75,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/miaototi/Aicraft',
+          href: 'https://github.com/TobiasTesauri/Aicraft',
           label: 'GitHub',
           position: 'right',
         },
@@ -97,8 +104,8 @@ const config: Config = {
           title: 'More',
           items: [
             { label: 'Benchmarks', to: '/docs/benchmarks' },
-            { label: 'GitHub', href: 'https://github.com/miaototi/Aicraft' },
-            { label: 'License', href: 'https://github.com/miaototi/Aicraft/blob/main/LICENSE' },
+            { label: 'GitHub', href: 'https://github.com/TobiasTesauri/Aicraft' },
+            { label: 'License', href: 'https://github.com/TobiasTesauri/Aicraft/blob/main/LICENSE' },
             { label: 'T&M Softwares', href: 'https://tmsoftwares.eu' },
           ],
         },
