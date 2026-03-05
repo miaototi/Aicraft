@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+﻿import React, { useEffect, useRef, useState, useMemo } from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import s from './index.module.css';
 
-/* ════════════════════════════════════════════════════════
-   Aicraft — Landing Page v2
-   ════════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Aicraft â€” Landing Page v2
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── Scroll reveal ────────────────────────────────────── */
+/* â”€â”€ Scroll reveal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function useReveal(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -34,7 +34,7 @@ function R({ children, className = '', delay = 0, as: Tag = 'div' }: any) {
   return <Tag ref={ref} className={`${s.reveal} ${className}`}>{children}</Tag>;
 }
 
-/* ── Animated number ──────────────────────────────────── */
+/* â”€â”€ Animated number â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function AnimNum({ value, suffix = '', label }: { value: number; suffix?: string; label: string }) {
   const [disp, setDisp] = useState('0');
   const ref = useRef<HTMLDivElement>(null);
@@ -67,7 +67,7 @@ function AnimNum({ value, suffix = '', label }: { value: number; suffix?: string
   );
 }
 
-/* ── Typing terminal ──────────────────────────────────── */
+/* â”€â”€ Typing terminal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function useTyping(lines: string[], speed = 22) {
   const [output, setOutput] = useState<string[]>([]);
   const started = useRef(false);
@@ -99,7 +99,7 @@ function useTyping(lines: string[], speed = 22) {
   return { ref, output };
 }
 
-/* ── Parallax tilt on mouse ───────────────────────────── */
+/* â”€â”€ Parallax tilt on mouse â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function useTilt(strength = 8) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -120,12 +120,12 @@ function useTilt(strength = 8) {
   return ref;
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    HERO
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function Hero() {
   const termLines = [
-    '$ git clone https://github.com/TobiasTesauri/Aicraft.git',
+    '$ git clone https://github.com/miaototi/Aicraft.git',
     '$ cd Aicraft && gcc -O3 demo.c -I./include -o demo',
     '$ ./demo',
     '[ac] init .............. ok',
@@ -177,7 +177,7 @@ function Hero() {
             <Link className={s.btnOutline} to="/docs/api/overview">
               API Reference
             </Link>
-            <Link className={s.btnGhost} href="https://github.com/TobiasTesauri/Aicraft">
+            <Link className={s.btnGhost} href="https://github.com/miaototi/Aicraft">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58l-.01-2.05c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 011.84 1.24 2.56 2.56 0 003.5 1 2.56 2.56 0 01.76-1.61c-2.66-.3-5.47-1.33-5.47-5.93a4.64 4.64 0 011.24-3.22 4.3 4.3 0 01.11-3.18s1-.33 3.3 1.23a11.4 11.4 0 016 0c2.28-1.56 3.29-1.23 3.29-1.23a4.3 4.3 0 01.12 3.18 4.64 4.64 0 011.23 3.22c0 4.61-2.81 5.63-5.48 5.92a2.87 2.87 0 01.82 2.23l-.01 3.3c0 .32.21.7.82.58A12 12 0 0012 .3"/></svg>
               GitHub
             </Link>
@@ -190,7 +190,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right — terminal */}
+        {/* Right â€” terminal */}
         <div className={s.heroVisual} ref={termRef}>
           <div className={s.termWrap} ref={tiltRef}>
             <div className={s.termReflect} />
@@ -225,12 +225,12 @@ function Hero() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    INSTALL STRIP
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function Install() {
   const [copied, setCopied] = useState(false);
-  const cmd = 'git clone https://github.com/TobiasTesauri/Aicraft.git && cd Aicraft';
+  const cmd = 'git clone https://github.com/miaototi/Aicraft.git && cd Aicraft';
 
   return (
     <section className={s.install}>
@@ -266,17 +266,18 @@ function Install() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    VIDEO SHOWCASE
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function VideoShowcase() {
   return (
     <section className={s.video}>
+      <div className={s.videoGlow} />
       <div className="container">
         <R>
           <div className={s.videoHead}>
-            <p className={s.sLabel}>See it in action</p>
-            <h2 className={s.sTitle}>Watch the demo</h2>
+            <p className={s.sLabel}>Official Teaser</p>
+            <h2 className={s.sTitle}>Watch the official teaser</h2>
           </div>
         </R>
         <R delay={150}>
@@ -284,7 +285,7 @@ function VideoShowcase() {
             <iframe
               className={s.videoFrame}
               src="https://www.youtube.com/embed/ZQaxlevTU7I"
-              title="Aicraft Demo"
+              title="Aicraft â€“ Official Teaser"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
@@ -295,9 +296,9 @@ function VideoShowcase() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    STATS / NUMBERS
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function Stats() {
   return (
     <section className={s.stats}>
@@ -309,7 +310,10 @@ function Stats() {
             <AnimNum value={14} label="GLSL shaders" />
             <AnimNum value={22} label="Autograd ops" />
             <AnimNum value={75} label="Test cases" />
-            <AnimNum value={0} label="Dependencies" />
+            <div className={s.statItem}>
+              <strong className={`${s.statNum} ${s.statZero}`}>Zero</strong>
+              <span className={s.statLabel}>Dependencies</span>
+            </div>
           </div>
         </R>
       </div>
@@ -317,9 +321,9 @@ function Stats() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CODE PREVIEW
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function CodePreview() {
   const lines = [
     { n: 1, c: <><span className={s.cPP}>#include</span> <span className={s.cStr}>"aicraft/aicraft.h"</span></> },
@@ -386,9 +390,9 @@ function CodePreview() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    ARCHITECTURE
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function Architecture() {
   const stack = [
     { label: 'Your Application', sub: 'main.c', color: '#8b949e' },
@@ -454,9 +458,9 @@ function Architecture() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FEATURES
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 const ICONS = {
   bolt: <svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   gpu: <svg viewBox="0 0 24 24" fill="none" width="26" height="26"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M9 9h6M9 12h6M9 15h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,
@@ -502,9 +506,9 @@ function Features() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    COMPARISON TABLE
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function Comparison() {
   const rows: [string, string, string, string][] = [
     ['Binary size',  '~150 KB',        '~800 MB',   '~1.8 GB'],
@@ -548,9 +552,9 @@ function Comparison() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    TESTIMONIAL / PHILOSOPHY
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function Philosophy() {
   return (
     <section className={s.philo}>
@@ -575,9 +579,9 @@ function Philosophy() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    WORKFLOW / HOW IT WORKS
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function Workflow() {
   const steps = [
     { num: '01', title: 'Include', text: 'Add the single header to your C project. No build system changes needed.', icon: <svg viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg> },
@@ -612,9 +616,9 @@ function Workflow() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    DOCUMENTATION MAP
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function DocMap() {
   const cards = [
     { title: 'Getting Started', desc: 'Clone, compile, run your first model in 5 minutes.', to: '/docs/getting-started', icon: <svg viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg> },
@@ -655,9 +659,9 @@ function DocMap() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FINAL CTA
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function CTA() {
   return (
     <section className={s.cta}>
@@ -677,12 +681,12 @@ function CTA() {
                 Get started
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
-              <Link className={s.btnOutline} href="https://github.com/TobiasTesauri/Aicraft">
+              <Link className={s.btnOutline} href="https://github.com/miaototi/Aicraft">
                 View on GitHub
               </Link>
             </div>
             <p className={s.ctaCredit}>
-              A project by <strong>Tobias Tesauri</strong> — <a href="https://tmsoftwares.eu" target="_blank" rel="noopener noreferrer">T&amp;M Softwares</a>
+              A project by <strong>Tobias Tesauri</strong> â€” <a href="https://tmsoftwares.eu" target="_blank" rel="noopener noreferrer">T&amp;M Softwares</a>
             </p>
           </div>
         </R>
@@ -691,14 +695,14 @@ function CTA() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    PAGE
-   ══════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 export default function Home(): React.JSX.Element {
   return (
     <Layout
       title="Home"
-      description="Aicraft — Pure C machine-learning framework. Zero dependencies, SIMD-optimised, Vulkan-accelerated."
+      description="Aicraft â€” Pure C machine-learning framework. Zero dependencies, SIMD-optimised, Vulkan-accelerated."
     >
       <Hero />
       <Install />
