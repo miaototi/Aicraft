@@ -7,6 +7,15 @@ const sidebars: SidebarsConfig = {
     'architecture',
     {
       type: 'category',
+      label: 'Tutorials',
+      collapsed: false,
+      items: [
+        'tutorials/mnist',
+        'tutorials/autoencoder',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Guides',
       collapsed: false,
       items: [
@@ -15,6 +24,10 @@ const sidebars: SidebarsConfig = {
         'guides/vulkan',
         'guides/serialization',
         'guides/error-handling',
+        'guides/debugging',
+        'guides/performance-tuning',
+        'guides/cross-compiling',
+        'guides/custom-layers',
       ],
     },
     {
@@ -26,6 +39,7 @@ const sidebars: SidebarsConfig = {
         'api/tensor',
         'api/autograd',
         'api/layers',
+        'api/activations',
         'api/loss',
         'api/optimizer',
         'api/memory',
@@ -34,8 +48,18 @@ const sidebars: SidebarsConfig = {
         'api/vulkan',
       ],
     },
+    {
+      type: 'category',
+      label: 'Internals',
+      collapsed: true,
+      items: [
+        'internals/autograd',
+      ],
+    },
     'benchmarks',
     'design-decisions',
+    'faq',
+    'changelog',
   ],
 };
 
