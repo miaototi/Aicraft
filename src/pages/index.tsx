@@ -267,6 +267,35 @@ function Install() {
 }
 
 /* ══════════════════════════════════════════════════════════
+   VIDEO SHOWCASE
+   ══════════════════════════════════════════════════════════ */
+function VideoShowcase() {
+  return (
+    <section className={s.video}>
+      <div className="container">
+        <R>
+          <div className={s.videoHead}>
+            <p className={s.sLabel}>See it in action</p>
+            <h2 className={s.sTitle}>Watch the demo</h2>
+          </div>
+        </R>
+        <R delay={150}>
+          <div className={s.videoWrap}>
+            <iframe
+              className={s.videoFrame}
+              src="https://www.youtube.com/embed/ZQaxlevTU7I"
+              title="Aicraft Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </R>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════
    STATS / NUMBERS
    ══════════════════════════════════════════════════════════ */
 function Stats() {
@@ -673,6 +702,7 @@ export default function Home(): React.JSX.Element {
     >
       <Hero />
       <Install />
+      <VideoShowcase />
       <Stats />
       <CodePreview />
       <Architecture />
