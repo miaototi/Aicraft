@@ -7,11 +7,12 @@ const config: Config = {
   tagline: 'Pure C machine-learning framework. No dependencies, no runtime.',
   favicon: 'img/favicon.svg',
 
-  url: 'https://miaototi.github.io',
-  baseUrl: '/Aicraft/',
+  url: 'https://aicraftdocumentazione.eu',
+  baseUrl: '/',
 
   organizationName: 'miaototi',
   projectName: 'Aicraft',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
